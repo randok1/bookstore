@@ -22,4 +22,25 @@
             <column  name="price"  type="double precision" />
         </createTable>
     </changeSet>
+    <changeSet  author="Ken Alberg"  id="2023-01-24 Add clients table">
+        <createTable tableName="clients">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column  name="name"  type="text" />
+            <column  name="email"  type="text" />
+            <column  name="phone"  type="text" />
+            <column  name="address"  type="text" />
+        </createTable>
+    </changeSet>
+    <changeSet  author="Ken Alberg"  id="2023-01-24 Add purchases table">
+        <createTable tableName="purchases">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column  name="books"  type="text" />
+            <column  name="client"  type="int" />
+            <column  name="total"  type="text" />
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
