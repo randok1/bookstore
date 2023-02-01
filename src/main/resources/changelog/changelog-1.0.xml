@@ -43,4 +43,9 @@
             <column  name="total"  type="text" />
         </createTable>
     </changeSet>
+    <changeSet  author="Rando Kuus"  id="2023-02-01 Add img_src column to books table">
+        <addColumn tableName="books">
+            <column name="img_src" type="text"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
