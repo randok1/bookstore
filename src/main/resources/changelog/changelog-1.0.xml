@@ -48,4 +48,15 @@
             <column name="img_src" type="text"/>
         </addColumn>
     </changeSet>
+    <changeSet  author="Rando Kuus"  id="2023-02-07 Add users table">
+        <createTable tableName="users">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column  name="username"  type="text" />
+            <column  name="password"  type="text" />
+            <column  name="firstname"  type="text" />
+            <column  name="lastname"  type="text" />
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

@@ -17,7 +17,6 @@ public class BooksService {
     public void addBook(BookData book){
         booksEntityRepository.save(new BookEntity(book.getTitle(), book.getAuthor(), book.getPages(), book.getSummary(), book.getPublished(), book.getLanguage(), book.getPublisher(), book.getPrice(), book.getImg_src()));
     }
-
     public BookData getBook (String title) {
         BookEntity bookEntity = booksEntityRepository.findBookEntitiesByTitle(title);
         BookData book = new BookData(bookEntity.getTitle(), bookEntity.getAuthor(), bookEntity.getPages(), bookEntity.getSummary(), bookEntity.getPublished(), bookEntity.getLanguage(), bookEntity.getPublisher(), bookEntity.getPrice(), bookEntity.getImg_src());
@@ -31,5 +30,11 @@ public class BooksService {
             allBooks.add(new BookData(bookEntity.getTitle(), bookEntity.getAuthor(), bookEntity.getPages(), bookEntity.getSummary(), bookEntity.getPublished(), bookEntity.getLanguage(), bookEntity.getPublisher(), bookEntity.getPrice(), bookEntity.getImg_src()));
         }
         return allBooks;
+    }
+
+    public void changePrice(String title, Double price) {
+        BookEntity bookEntity = booksEntityRepository.findBookEntitiesByTitle(title);
+        bookEntity.setPrice(price);
+        booksEntityRepository.save(bookEntity);
     }
 }

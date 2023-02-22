@@ -22,6 +22,10 @@ public class BookData {
         this.img_src = img_src;
     }
 
+    public BookData() {
+
+    }
+
     public String getTitle() {
         return title;
     }

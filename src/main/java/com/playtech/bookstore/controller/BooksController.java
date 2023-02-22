@@ -26,4 +26,10 @@ public class BooksController {
         return booksService.getBooks();
     }
 
+    @PutMapping("api/book/{title}/{price}")
+    public String changePrice(@PathVariable("title") String title, @PathVariable("price") Double price) {
+        booksService.changePrice(title, price);
+        return title + " price was changed to " + price;
+    }
+
 }
