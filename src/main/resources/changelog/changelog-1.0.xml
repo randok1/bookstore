@@ -43,4 +43,9 @@
             <column  name="total"  type="text" />
         </createTable>
     </changeSet>
+    <changeSet  author="Ken Alberg"  id="2023-01-24 Add pw column">
+        <addColumn tableName="clients">
+            <column  name="password"  type="text" />
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

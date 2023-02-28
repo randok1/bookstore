@@ -6,12 +6,31 @@ public class ClientData {
     private String phone;
     private String address;
 
-    public ClientData(String name, String email, String phone, String address) {
+    public ClientData(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
+
+    public ClientData() {
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public ClientData(String name, String email, String phone, String address, String password) {
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
+        this.password = password;
     }
+
+    private String password;
 
     public String getName() {
         return name;
