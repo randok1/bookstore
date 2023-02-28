@@ -1,6 +1,7 @@
 package com.playtech.bookstore.controller;
 
 import com.playtech.bookstore.data.ClientData;
+import com.playtech.bookstore.data.PurchasesData;
 import com.playtech.bookstore.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,5 +28,10 @@ public class ClientsController {
     @GetMapping("api/clients")
     public List<ClientData> getClients(){
         return clientService.getClients();
+    }
+
+    @PostMapping("client/buy")
+    public void buyBook(@RequestBody PurchasesData purchasesData){
+        clientService.buyBook(purchasesData);
     }
 }

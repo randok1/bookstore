@@ -18,6 +18,6 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleError(Exception e){
         log.error("Internal server error", e);
-        return new ResponseEntity<>(new ErrorResponse("juhtus viga"),HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new ErrorResponse("INTERNAL_SERVER_ERROR"),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

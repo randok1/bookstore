@@ -17,8 +17,9 @@ public class BookEntity {
     private String language;
     private String publisher;
     private Double price;
+    private String img_src;
 
-    public BookEntity(String title, String author, int pages, String summary, int published, String language, String publisher, double price) {
+    public BookEntity(String title, String author, int pages, String summary, int published, String language, String publisher, double price, String img_src) {
         this.title = title;
         this.author = author;
         this.pages = pages;
@@ -27,6 +28,7 @@ public class BookEntity {
         this.language = language;
         this.publisher = publisher;
         this.price = price;
+        this.img_src = img_src;
     }
 
     public BookEntity() {
@@ -103,5 +105,13 @@ public class BookEntity {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getImg_src() {
+        return img_src;
+    }
+
+    public void setImg_src(String img_src) {
+        this.img_src = img_src;
     }
 }
