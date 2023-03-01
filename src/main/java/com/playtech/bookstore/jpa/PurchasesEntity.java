@@ -1,9 +1,9 @@
 package com.playtech.bookstore.jpa;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name="purchases")
 public class PurchasesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +16,10 @@ public class PurchasesEntity {
         this.books = books;
         this.client = client;
         this.total = total;
+    }
+
+    public PurchasesEntity() {
+
     }
 
     public String getBooks() {

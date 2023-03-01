@@ -1,4 +1,4 @@
-package com.playtech.bookstore.configuration;
+package com.playtech.bookstore.security;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
