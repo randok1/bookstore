@@ -28,11 +28,6 @@ public class BooksService {
         BookData book = new BookData(bookEntity.getTitle(), bookEntity.getAuthor(), bookEntity.getPages(), bookEntity.getSummary(), bookEntity.getPublished(), bookEntity.getLanguage(), bookEntity.getPublisher(), bookEntity.getPrice(), bookEntity.getImg_src());
         return book;
     }
-    public BookData getBookById (Integer id) {
-        BookEntity bookEntity = booksEntityRepository.findBookEntityById(id);
-        BookData book = new BookData(bookEntity.getTitle(), bookEntity.getAuthor(), bookEntity.getPages(), bookEntity.getSummary(), bookEntity.getPublished(), bookEntity.getLanguage(), bookEntity.getPublisher(), bookEntity.getPrice(), bookEntity.getImg_src());
-        return book;
-    }
 
     public List<BookData> getBooks(){
         List<BookEntity> bookEntities = booksEntityRepository.findAll();
