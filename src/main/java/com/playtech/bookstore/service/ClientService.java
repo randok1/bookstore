@@ -75,9 +75,6 @@ public class ClientService {
     public void buyBook(PurchasesData purchasesData) {
         purchasesEntityRepository.save(new PurchasesEntity(purchasesData.getBooks(), purchasesData.getClient(), purchasesData.getTotal()));
     }
-    public void getClientBooks(ClientData client){
-
-    }
     private String generateJwt(String id){
         Map<String, Object> claims = Map.of("email", id);
         byte[] secret = Decoders.BASE64.decode("YXNkZmdoamtsw7ZsamV5NjdneTMwNGowb2JnaHZneXViam5pbml1bmlidWJ1aGI");
