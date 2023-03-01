@@ -1,4 +1,4 @@
-package com.playtech.bookstore.configuration;
+package com.playtech.bookstore.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -43,7 +43,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     }
 
     private Claims parseToken(String token) {
-        return Jwts.parserBuilder()
+            return Jwts.parserBuilder()
                 .setSigningKey(JwtTokenProvider.key)
                 .build()
                 .parseClaimsJws(token)
@@ -60,8 +60,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
     private UsernamePasswordAuthenticationToken buildAuthToken(Claims claims) {
         return new UsernamePasswordAuthenticationToken(claims.get("userName"), // Set info (can be an DTO) of logged in user
-                "",
-                List.of(new SimpleGrantedAuthority("USER"))); // List of roles
+            "",
+            List.of(new SimpleGrantedAuthority("USER"))); // List of roles
     }
 
 }

@@ -13,15 +13,19 @@ public class ClientsController {
     @Autowired
     ClientService clientService;
 
-    @PostMapping("client")
-    public void addClient(@RequestBody ClientData client){
-        clientService.addClient(client);
+    @PostMapping("api/public/signup")
+    public void signup(@RequestBody ClientData client){
+        clientService.signup(client);
     }
-    @GetMapping("client/{name}")
+    @PostMapping("api/public/login")
+    public LoginResponse login(@RequestBody ClientData client){
+        return clientService.login(client);
+    }
+    @GetMapping("api/client/{name}")
     public ClientData getClient(@PathVariable("name") String name){
         return clientService.getClient(name);
     }
-    @GetMapping("clients")
+    @GetMapping("api/clients")
     public List<ClientData> getClients(){
         return clientService.getClients();
     }

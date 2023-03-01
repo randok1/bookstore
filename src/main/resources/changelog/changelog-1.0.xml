@@ -43,6 +43,11 @@
             <column  name="total"  type="text" />
         </createTable>
     </changeSet>
+    <changeSet  author="Ken Alberg"  id="2023-01-24 Add pw column">
+        <addColumn tableName="clients">
+            <column  name="password"  type="text" />
+        </addColumn>
+    </changeSet>
     <changeSet  author="Rando Kuus"  id="2023-02-01 Add img_src column to books table">
         <addColumn tableName="books">
             <column name="img_src" type="text"/>
