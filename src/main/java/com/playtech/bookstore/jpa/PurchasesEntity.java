@@ -45,4 +45,6 @@ public class PurchasesEntity {
     public void setTotal(Double total) {
         this.total = total;
     }
+
+
 }

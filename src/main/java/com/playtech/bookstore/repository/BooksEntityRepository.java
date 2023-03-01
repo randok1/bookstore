@@ -7,4 +7,5 @@ public interface BooksEntityRepository extends JpaRepository<BookEntity, Long> {
     BookEntity findBookEntitiesByTitle(String title);
     BookEntity findBookEntitiesByAuthor(String author);
     BookEntity findBookEntitiesByPrice(Double price);
+    BookEntity findBookEntityById(Integer id);
 }

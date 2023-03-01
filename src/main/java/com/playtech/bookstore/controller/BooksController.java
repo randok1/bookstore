@@ -21,9 +21,10 @@ public class BooksController {
         return booksService.getBook(title);
     }
 
-    @GetMapping("api/books")
-    public List<BookData> getBooks(){
-        return booksService.getBooks();
+
+    @GetMapping("api/books/{client}")
+    public List<BookData> getClientBooks(@PathVariable("client") String clientName){
+        return booksService.getClientBooks(clientName);
     }
 
     @PutMapping("api/book/{title}/{price}")

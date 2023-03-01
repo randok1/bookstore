@@ -60,6 +60,10 @@ public class ClientService {
         ClientData client = new ClientData(clientEntity.getName(), clientEntity.getEmail(), clientEntity.getPhone(), clientEntity.getAddress(), clientEntity.getPassword());
         return client;
     }
+    public Integer getClientId(String name) {
+        ClientEntity clientEntity = clientEntityRepository.findClientEntitiesByName(name);
+        return clientEntity.getId();
+    }
     public List<ClientData> getClients(){
         List<ClientEntity> clientEntities = clientEntityRepository.findAll();
         List<ClientData> allClients = new ArrayList<>();
@@ -70,6 +74,9 @@ public class ClientService {
     }
     public void buyBook(PurchasesData purchasesData) {
         purchasesEntityRepository.save(new PurchasesEntity(purchasesData.getBooks(), purchasesData.getClient(), purchasesData.getTotal()));
+    }
+    public void getClientBooks(ClientData client){
+
     }
     private String generateJwt(String id){
         Map<String, Object> claims = Map.of("email", id);
