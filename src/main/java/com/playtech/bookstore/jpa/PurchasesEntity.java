@@ -3,7 +3,7 @@ package com.playtech.bookstore.jpa;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="purchases")
+@Table(name = "purchases")
 public class PurchasesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
